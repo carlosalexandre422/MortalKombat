@@ -1,6 +1,6 @@
 % Lutadores
-lutador(scorpion, 81, 72).
-lutador(sub_zero, 78, 61).
+lutador(scorpion, 81, 61).
+lutador(sub_zero, 61, 81).
 lutador(liu_kang, 86, 78).
 lutador(kung_lao, 83, 66).
 lutador(raiden, 94, 87).
@@ -29,12 +29,12 @@ batalha(Lutador1, Lutador2) :-
     luta(Lutador1, Media1, Lutador2, Media2).
 
 luta(Lutador1, Media1, Lutador2, Media2) :-
-    format('Batalha: ~w (MÈdia: ~w) vs ~w (MÈdia: ~w)~n', [Lutador1, Media1, Lutador2, Media2]),
+    format('Batalha: ~w (M√©dia: ~w) vs ~w (M√©dia: ~w)~n', [Lutador1, Media1, Lutador2, Media2]),
     (Media1 > Media2 ->
         format('~w venceu a batalha!~n', [Lutador1]);
     Media2 > Media1 ->
         format('~w venceu a batalha!~n', [Lutador2]);
-    format('Empate! Ambos os lutadores tÍm a mesma mÈdia.~n')).
+    format('Empate! Ambos os lutadores t√™m a mesma m√©dia.~n')).
 
 calcular_media(Forca, Defesa, Media) :-
     Media is (Forca + Defesa) / 2.
@@ -46,26 +46,26 @@ calcular_media(Forca, Defesa, Media) :-
 main :-
     repeat,
     writeln('Escolha dois lutadores para a batalha (digite "sair" para encerrar):'),
-    writeln('scorpion (ForÁa: 81, Defesa: 61)'),
-    writeln('sub_zero (ForÁa: 61, Defesa: 81)'),
-    writeln('liu_kang (ForÁa: 86, Defesa: 78)'),
-    writeln('kung_lao (ForÁa: 83, Defesa: 66)'),
-    writeln('raiden (ForÁa: 94, Defesa: 87)'),
-    writeln('kitana (ForÁa: 77, Defesa: 73)'),
-    writeln('johnny_cage (ForÁa: 88, Defesa: 76)'),
-    writeln('sonya_blade (ForÁa: 84, Defesa: 71)'),
-    writeln('cassie_cage (ForÁa: 92, Defesa: 82)'),
-    writeln('jax_briggs (ForÁa: 87, Defesa: 76)'),
-    writeln('kano (ForÁa: 82, Defesa: 74)'),
-    writeln('kotal_kahn (ForÁa: 93, Defesa: 85)'),
-    writeln('ferra_torr (ForÁa: 84, Defesa: 71)'),
-    writeln('dvorah (ForÁa: 89, Defesa: 79)'),
-    writeln('erron_black (ForÁa: 82, Defesa: 70)'),
-    writeln('reptile (ForÁa: 77, Defesa: 63)'),
-    writeln('kenshi (ForÁa: 95, Defesa: 88)'),
-    writeln('takeda_takahashi (ForÁa: 88, Defesa: 78)'),
-    writeln('jacqui_briggs (ForÁa: 83, Defesa: 73)'),
-    writeln('kung_jin (ForÁa: 94, Defesa: 85)'),
+    writeln('scorpion (For√ßa: 81, Defesa: 61)'),
+    writeln('sub_zero (For√ßa: 61, Defesa: 81)'),
+    writeln('liu_kang (For√ßa: 86, Defesa: 78)'),
+    writeln('kung_lao (For√ßa: 83, Defesa: 66)'),
+    writeln('raiden (For√ßa: 94, Defesa: 87)'),
+    writeln('kitana (For√ßa: 77, Defesa: 73)'),
+    writeln('johnny_cage (For√ßa: 88, Defesa: 76)'),
+    writeln('sonya_blade (For√ßa: 84, Defesa: 71)'),
+    writeln('cassie_cage (For√ßa: 92, Defesa: 82)'),
+    writeln('jax_briggs (For√ßa: 87, Defesa: 76)'),
+    writeln('kano (For√ßa: 82, Defesa: 74)'),
+    writeln('kotal_kahn (For√ßa: 93, Defesa: 85)'),
+    writeln('ferra_torr (For√ßa: 84, Defesa: 71)'),
+    writeln('dvorah (For√ßa: 89, Defesa: 79)'),
+    writeln('erron_black (For√ßa: 82, Defesa: 70)'),
+    writeln('reptile (For√ßa: 77, Defesa: 63)'),
+    writeln('kenshi (For√ßa: 95, Defesa: 88)'),
+    writeln('takeda_takahashi (For√ßa: 88, Defesa: 78)'),
+    writeln('jacqui_briggs (For√ßa: 83, Defesa: 73)'),
+    writeln('kung_jin (For√ßa: 94, Defesa: 85)'),
 
     read_line_to_codes(user_input, Input1),
     atom_codes(Choice1, Input1),
@@ -79,9 +79,9 @@ main :-
         lutador(Choice2, _, _) ->
             batalha(Choice1, Choice2),
             fail;
-        writeln('Lutador inv·lido! Tente novamente.')),
+        writeln('Lutador inv√°lido! Tente novamente.')),
     fail;
-    writeln('Lutador inv·lido! Tente novamente.'),
+    writeln('Lutador inv√°lido! Tente novamente.'),
     fail).
 
 
